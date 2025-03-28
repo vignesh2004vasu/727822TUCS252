@@ -8,12 +8,31 @@ import "./App.css";
 function App() {
   return (
     <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/feed" element={<Feed />} />
-              <Route path="/trending" element={<TrendingPosts />} />
-              <Route path="/top-users" element={<TopUsers />} />
-            </Routes>
+      <div>
+        <nav className="bg-blue-500 p-4">
+          <div className="flex justify-center space-x-4">
+            <Link to="/" className="text-white hover:text-gray-200">
+              Home
+            </Link>
+            <Link to="/feed" className="text-white hover:text-gray-200">
+              Feed
+            </Link>
+            <Link to="/trending" className="text-white hover:text-gray-200">
+              Trending
+            </Link>
+            <Link to="/top-users" className="text-white hover:text-gray-200">
+              Top Users
+            </Link>
+          </div>
+        </nav>
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/feed" element={<Feed />} />
+          <Route path="/trending" element={<TrendingPosts />} />
+          <Route path="/top-users" element={<TopUsers />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }
